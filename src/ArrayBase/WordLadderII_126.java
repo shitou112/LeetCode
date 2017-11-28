@@ -8,84 +8,78 @@ import java.util.*;
  */
 public class WordLadderII_126 {
 
+    HashMap<String, Integer> path = new HashMap<>();
+    ArrayList<String> results = new ArrayList<>();
     List<List<String>> all_list = new ArrayList<>();
-    int minNum = Integer.MAX_VALUE;
+
     public List<List<String>> findLadders(String beginWord, String endWord, List<String> wordList) {
-        HashSet<String> wordlists = new HashSet<>(wordList);
-        List<List<String>> minLists = new ArrayList<>();
-        HashMap<String, Integer> word2Index = new HashMap<>();
-        int index = 0;
-        word2Index.put(beginWord, index++);
-        for (String ele: wordlists){
-            word2Index.put(ele, index++);
-        }
-        boolean[][] visited = new boolean[index][index];
+        HashSet<String> wordSet = new HashSet<>(wordList);
+        bfs(beginWord, endWord, wordSet);
+        dfs(endWord, beginWord, path, path.getOrDefault(endWord, -1));
 
-        ArrayList<String> beginList = new ArrayList<>();
-        beginList.add(beginWord);
-        search(beginWord, endWord, wordlists, visited, word2Index, beginList);
-
-        for (List<String> ele: all_list){
-            if (ele.size() == minNum){
-                minLists.add(ele);
-            }
-        }
-
-        return minLists;
+        return all_list;
     }
 
-    public void search(String beginWord, String endWord, HashSet<String> wordList, boolean[][] visited, HashMap<String, Integer> word2Index, List<String> result){
+    public void bfs(String start, String end, HashSet<String> wordSet){
+        Queue<String> queue = new LinkedList<>();
+        queue.add(start);
+        path.put(start, 0);
+        while (queue.peek() != null){
+            String ele = queue.poll();
+            for (int i=0; i < ele.length(); ++i){
+                StringBuilder sb = new StringBuilder(ele);
+                for (char ch='a'; ch <= 'z'; ++ch){
+                    sb.setCharAt(i, ch);
+                    if (sb.charAt(i) == ele.charAt(i))
+                        continue;
 
-        List<String> changeList = findWord(beginWord, wordList, visited, word2Index);
-        String tmpWord;
-
-        for (int i=0; i < changeList.size(); ++i){
-            String ele = changeList.get(i);
-            tmpWord = ele;
-            result.add(ele);
-
-            visited[word2Index.get(ele)][word2Index.get(beginWord)] = true;
-            visited[word2Index.get(beginWord)][word2Index.get(ele)] = true;
-
-            if (tmpWord.equals(endWord) && result.size() > 1) {
-                if (result.size() <= minNum){
-                    minNum = result.size();
-                    all_list.add(new ArrayList<String>(result));
+                    if (wordSet.contains(sb.toString())){
+                        if (!path.containsKey(sb.toString())){
+                            int value = path.get(ele);
+                            queue.add(sb.toString());
+                            path.put(sb.toString(), value + 1);
+                        }
+                    }
                 }
-
-
+                sb.setCharAt(i, ele.charAt(i));
             }
-            search(ele, endWord, wordList, visited, word2Index, result);
-
-            visited[word2Index.get(ele)][word2Index.get(beginWord)] = false;
-            visited[word2Index.get(beginWord)][word2Index.get(ele)] = false;
-
-
-            result.remove(result.lastIndexOf(ele));
         }
-
-
     }
 
-    public List<String> findWord(String word, HashSet<String> wordList, boolean[][] visited, HashMap<String, Integer> word2Index){
-        List<String> list = new ArrayList<>();
-        StringBuilder sb = new StringBuilder(word);
-        for (int i=0; i < word.length(); ++i){
-            for (char j='a';j <= 'z'; ++j){
-                sb.setCharAt(i, j);
-                if (wordList.contains(sb.toString()) && !visited[word2Index.get(word)][word2Index.get(sb.toString())])
-                    list.add(sb.toString());
-            }
-            sb.setCharAt(i, word.charAt(i));
+    public void dfs(String start, String end, HashMap<String, Integer> path, int step){
+        if (step < 0)
+            return;
+        if (start.equals(end)){
+            results.add(end);
+            ArrayList<String> newList = new ArrayList<>(results);
+            results.remove(results.lastIndexOf(end));
+            Collections.reverse(newList);
+            all_list.add(newList);
         }
 
-        return list;
+        Queue<String> queue = new LinkedList<>();
+        queue.add(start);
+        results.add(start);
+        while (queue.peek()!=null){
+            String ele = queue.poll();
+            for (int i=0; i < ele.length(); ++i){
+                StringBuilder sb = new StringBuilder(ele);
+                for (char ch='a'; ch <= 'z'; ++ch){
+                    sb.setCharAt(i, ch);
+                    if (sb.charAt(i) == ele.charAt(i))
+                        continue;
+                    if (path.getOrDefault(sb.toString(), -1)==step-1){
+                        dfs(sb.toString(), end, path, step-1);
+                    }
+                }
+            }
+        }
     }
 
     public static void main(String[] args) {
         WordLadderII_126 wordLadderII_126 = new WordLadderII_126();
         String begin = "qa";
-        String end = "sq";
+        String end = "sw";
 
         String[] wordList = {"si","go","se","cm","so","ph","mt","db","mb","sb","kr","ln","tm","le","av","sm","ar","ci","ca","br","ti","ba","to","ra","fa","yo","ow","sn","ya","cr","po","fe","ho","ma","re","or","rn","au","ur","rh","sr","tc","lt","lo","as","fr","nb","yb","if","pb","ge","th","pm","rb","sh","co","ga","li","ha","hz","no","bi","di","hi","qa","pi","os","uh","wm","an","me","mo","na","la","st","er","sc","ne","mn","mi","am","ex","pt","io","be","fm","ta","tb","ni","mr","pa","he","lr","sq","ye"
         };

@@ -7,76 +7,54 @@ import java.util.*;
  *         created on 2017/11/28.
  */
 public class WordLadder_127 {
-    public int ladderLength(String start, String end, Set<String> dict) {
-        int dist = calDistance(start, end);
-        if (dist == 1) {
-            return 2;
-        }
+    HashMap<String, Integer> path = new HashMap<>();
+    public int ladderLength(String start, String end, List<String> dict) {
+        HashSet<String> wordSet = new HashSet<>(dict);
+        bfs(start, end, wordSet);
+        int length = path.getOrDefault(end, -1);
 
-        return bfsDict(dict, start, end);
+        return length+1;
+
     }
 
-    private int calDistance(String word1, String word2) {
-        int dist = 0;
+    public void bfs(String start, String end, HashSet<String> wordSet){
+        Queue<String> queue = new LinkedList<>();
+        queue.add(start);
+        path.put(start, 0);
+        while (queue.peek() != null){
+            String ele = queue.poll();
+            for (int i=0; i < ele.length(); ++i){
+                StringBuilder sb = new StringBuilder(ele);
+                for (char ch='a'; ch <= 'z'; ++ch){
+                    sb.setCharAt(i, ch);
+                    if (sb.charAt(i) == ele.charAt(i))
+                        continue;
 
-        for (int i = 0; i < word1.length(); i++) {
-            if (word1.charAt(i) != word2.charAt(i)) {
-                dist += 1;
-            }
-        }
-
-        return dist;
-    }
-
-    private void enQueue(Set<String> dict, LinkedList<String> queue, String target, Map<String, Integer> map, int step) {
-        if (dict == null || dict.isEmpty()) {
-            return;
-        }
-
-        for (int i = 0; i < target.length(); i++) {
-            for (char c = 'a'; c <= 'z'; c++) {
-                StringBuilder sBuilder = new StringBuilder(target);
-                if (sBuilder.charAt(i) == c) {
-                    continue;
+                    if (wordSet.contains(sb.toString())){
+                        if (!path.containsKey(sb.toString())){
+                            int value = path.get(ele);
+                            queue.add(sb.toString());
+                            path.put(sb.toString(), value + 1);
+                        }
+                    }
                 }
-                sBuilder.setCharAt(i, c);
-                if (dict.contains(sBuilder.toString())) {
-                    queue.addLast(sBuilder.toString());
-                    dict.remove(sBuilder.toString());
-                    map.put(sBuilder.toString(), step + 1);
-                }
+                sb.setCharAt(i, ele.charAt(i));
             }
         }
-    }
-
-    private int bfsDict(Set<String> dict, String start, String end) {
-        LinkedList<String> queue = new LinkedList<String>();
-        Map<String, Integer> hashMap = new HashMap<String, Integer>();
-        enQueue(dict, queue, start, hashMap, 1);
-
-        while (!queue.isEmpty()) {
-            String word = queue.poll();
-            int step = hashMap.get(word);
-            if (calDistance(word, end) == 1) {
-                return step + 1;
-            }
-
-            enQueue(dict, queue, word, hashMap, step);
-        }
-
-        return 0;
     }
 
     public static void main(String[] args) {
-        WordLadder_127 wordLadder = new WordLadder_127();
-        String begin = "qa";
-        String end = "sq";
+        WordLadder_127 wordLadderII_126 = new WordLadder_127();
+        String begin = "hit";
+        String end = "coq";
 
-        String[] wordList = {"si","go","se","cm","so","ph","mt","db","mb","sb","kr","ln","tm","le","av","sm","ar","ci","ca","br","ti","ba","to","ra","fa","yo","ow","sn","ya","cr","po","fe","ho","ma","re","or","rn","au","ur","rh","sr","tc","lt","lo","as","fr","nb","yb","if","pb","ge","th","pm","rb","sh","co","ga","li","ha","hz","no","bi","di","hi","qa","pi","os","uh","wm","an","me","mo","na","la","st","er","sc","ne","mn","mi","am","ex","pt","io","be","fm","ta","tb","ni","mr","pa","he","lr","sq","ye"
-        };
-        Set<String> list = new HashSet<>();
+        String[] wordList = {"hot","dot","dog","lot","log","cog"};
+        ArrayList<String> list = new ArrayList<>();
         for (String ele: wordList)
             list.add(ele);
-        wordLadder.ladderLength(begin, end, list);
+        int result = wordLadderII_126.ladderLength(begin, end, list);
+        System.out.println(result);
     }
+
+
 }
