@@ -46,7 +46,7 @@ public class WordLadder_127 {
     public static void main(String[] args) {
         WordLadder_127 wordLadderII_126 = new WordLadder_127();
         String begin = "hit";
-        String end = "coq";
+        String end = "cow";
 
         String[] wordList = {"hot","dot","dog","lot","log","cog"};
         ArrayList<String> list = new ArrayList<>();
