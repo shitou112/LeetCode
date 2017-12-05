@@ -6,7 +6,7 @@ import java.util.Stack;
  * @author Qian Shaofeng
  *         created on 2017/12/3.
  */
-public class TrappingRainWater_42 {
+public class T42_TrappingRainWater {
     /**
      * 1. stack 弹栈计算雨水存储量
      *
@@ -65,7 +65,7 @@ public class TrappingRainWater_42 {
     }
 
     public static void main(String[] args) {
-        TrappingRainWater_42 trw = new TrappingRainWater_42();
+        T42_TrappingRainWater trw = new T42_TrappingRainWater();
         int[] height = {1,2,3,4,2,1,3,4};
         System.out.println(trw.trap2(height));
     }

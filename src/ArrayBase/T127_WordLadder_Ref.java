@@ -6,7 +6,7 @@ import java.util.*;
  * @author Qian Shaofeng
  *         created on 2017/11/29.
  */
-public class WordLadder_127_Ref {
+public class T127_WordLadder_Ref {
     public int ladderLength(String start, String end, Set<String> dict) {
         // Use queue to help BFS
         Queue<String> queue = new LinkedList<String>();
@@ -55,7 +55,7 @@ public class WordLadder_127_Ref {
     }
 
     public static void main(String[] args) {
-        WordLadder_127_Ref wordLadderII_126 = new WordLadder_127_Ref();
+        T127_WordLadder_Ref wordLadderII_126 = new T127_WordLadder_Ref();
         String begin = "hit";
         String end = "cow";
 

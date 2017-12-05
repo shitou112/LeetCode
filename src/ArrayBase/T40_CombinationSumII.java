@@ -9,7 +9,7 @@ import java.util.List;
  * @author Qian Shaofeng
  *         created on 2017/12/1.
  */
-public class CombinationSumII_40{
+public class T40_CombinationSumII {
     HashSet<List<Integer>> results = new HashSet<>();
     public List<List<Integer>> combinationSum2(int[] candidates, int target) {
         Arrays.sort(candidates);
@@ -40,7 +40,7 @@ public class CombinationSumII_40{
     }
 
     public static void main(String[] args) {
-        CombinationSumII_40 cs = new CombinationSumII_40();
+        T40_CombinationSumII cs = new T40_CombinationSumII();
         int[] candidates = {1,1,1};
         List<List<Integer>> a = cs.combinationSum2(candidates, 3);
         System.out.println(a);

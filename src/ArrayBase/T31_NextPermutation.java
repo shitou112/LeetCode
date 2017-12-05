@@ -4,7 +4,7 @@ package ArrayBase;
  * @author Qian Shaofeng
  *         created on 2017/11/30.
  */
-public class NextPermutation_31 {
+public class T31_NextPermutation {
     public void nextPermutation(int[] nums) {
         int i=nums.length-1;
         for (;i > 0; --i) {
@@ -32,7 +32,7 @@ public class NextPermutation_31 {
     }
 
     public static void main(String[] args) {
-        NextPermutation_31 np = new NextPermutation_31();
+        T31_NextPermutation np = new T31_NextPermutation();
         int[] nums = {1,3,2};
         np.nextPermutation(nums);
         System.out.println(nums);

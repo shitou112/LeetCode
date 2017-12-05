@@ -4,7 +4,7 @@ package ArrayBase;
  * @author Qian Shaofeng
  *         created on 2017/11/30.
  */
-public class SearchinRotatedSortedArray_33 {
+public class T33_SearchinRotatedSortedArray {
     public int search(int[] nums, int target) {
         if (nums.length==0)
             return -1;
@@ -63,7 +63,7 @@ public class SearchinRotatedSortedArray_33 {
     }
 
     public static void main(String[] args) {
-        SearchinRotatedSortedArray_33 sr = new SearchinRotatedSortedArray_33();
+        T33_SearchinRotatedSortedArray sr = new T33_SearchinRotatedSortedArray();
         int[] nums = {3,1};
         int target = 1;
         System.out.println(sr.search(nums, target));

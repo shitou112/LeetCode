@@ -6,7 +6,7 @@ import java.util.Arrays;
  * @author Qian Shaofeng
  *         created on 2017/12/5.
  */
-public class UniquePaths_62_best {
+public class T62_UniquePaths_best {
     public int uniquePaths(int m, int n) {
         int[] row = new int[n];
         Arrays.fill(row,1);

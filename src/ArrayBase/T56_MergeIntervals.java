@@ -9,7 +9,7 @@ import java.util.List;
  * @author Qian Shaofeng
  *         created on 2017/12/4.
  */
-public class MergeIntervals_56 {
+public class T56_MergeIntervals {
     static class Interval {
         int start;
         int end;
@@ -85,7 +85,7 @@ public class MergeIntervals_56 {
         intervals.add(i1);
         intervals.add(i2);
         intervals.add(i3);
-        MergeIntervals_56 ii = new MergeIntervals_56();
+        T56_MergeIntervals ii = new T56_MergeIntervals();
         List<Interval> a = ii.merge(intervals);
         System.out.println(a);
     }

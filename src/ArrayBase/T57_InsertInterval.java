@@ -7,7 +7,7 @@ import java.util.List;
  * @author Qian Shaofeng
  *         created on 2017/12/4.
  */
-public class InsertInterval_57 {
+public class T57_InsertInterval {
 
      static class Interval {
          int start;
@@ -47,7 +47,7 @@ public class InsertInterval_57 {
         intervals.add(i1);
         intervals.add(i2);
         intervals.add(i3);
-        InsertInterval_57 ii = new InsertInterval_57();
+        T57_InsertInterval ii = new T57_InsertInterval();
         List<Interval> a = ii.insert(intervals, new Interval(3, 6));
         System.out.println(a);
     }

@@ -1,12 +1,10 @@
 package ArrayBase;
 
-import java.util.Arrays;
-
 /**
  * @author Qian Shaofeng
  *         created on 2017/12/5.
  */
-public class T63_MinimumPathSum {
+public class T64_MinimumPathSum {
     public int minPathSum(int[][] grid) {
         int m = grid.length;
         int n = grid[0].length;
@@ -28,7 +26,7 @@ public class T63_MinimumPathSum {
     }
 
     public static void main(String[] args) {
-        T63_MinimumPathSum mps = new T63_MinimumPathSum();
+        T64_MinimumPathSum mps = new T64_MinimumPathSum();
         int[][] paths = {{1,3,1}, {1, 5, 1}, {4,2,1}};
         System.out.println(mps.minPathSum(paths));
     }

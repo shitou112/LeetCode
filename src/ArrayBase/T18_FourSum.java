@@ -6,7 +6,7 @@ import java.util.*;
  * @author Qian Shaofeng
  *         created on 2017/11/29.
  */
-public class FourSum_18 {
+public class T18_FourSum {
     public List<List<Integer>> fourSum(int[] nums, int target) {
         List<List<Integer>> result = new ArrayList<>();
 
@@ -47,7 +47,7 @@ public class FourSum_18 {
     }
 
     public static void main(String[] args) {
-        FourSum_18 fs = new FourSum_18();
+        T18_FourSum fs = new T18_FourSum();
         int[] nums = {-3,-2,-1,0,0,1,2,3};
         List<List<Integer>> a = fs.fourSum(nums, 0);
     }

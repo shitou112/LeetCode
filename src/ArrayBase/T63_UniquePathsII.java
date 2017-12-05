@@ -1,12 +1,10 @@
 package ArrayBase;
 
-import java.util.Arrays;
-
 /**
  * @author Qian Shaofeng
  *         created on 2017/12/5.
  */
-public class UniquePathsII_63 {
+public class T63_UniquePathsII {
     public int uniquePathsWithObstacles(int[][] obstacleGrid) {
         int m = obstacleGrid.length;
         int n = obstacleGrid[0].length;
@@ -36,7 +34,7 @@ public class UniquePathsII_63 {
     }
 
     public static void main(String[] args) {
-        UniquePathsII_63 np = new UniquePathsII_63();
+        T63_UniquePathsII np = new T63_UniquePathsII();
         int[][] obstacleGrid = {{0, 1, 0}};
         System.out.println(np.uniquePathsWithObstacles(obstacleGrid));
     }

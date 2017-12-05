@@ -6,7 +6,7 @@ import java.util.Arrays;
  * @author Qian Shaofeng
  *         created on 2017/11/29.
  */
-public class ThreeSumClosest_16 {
+public class T16_ThreeSumClosest {
     public int threeSumClosest(int[] nums, int target) {
         Arrays.sort(nums);
         int bestNum = Integer.MAX_VALUE;
@@ -33,7 +33,7 @@ public class ThreeSumClosest_16 {
     }
 
     public static void main(String[] args) {
-        ThreeSumClosest_16 tsc = new ThreeSumClosest_16();
+        T16_ThreeSumClosest tsc = new T16_ThreeSumClosest();
         int[] nums = {1,2,4,8,16,32,64,128};
         int target = 82;
         System.out.println(tsc.threeSumClosest(nums, target));

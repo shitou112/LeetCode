@@ -4,7 +4,7 @@ package ArrayBase;
  * @author Qian Shaofeng
  *         created on 2017/11/28.
  */
-public class WordSearch79 {
+public class T79_WordSearch {
     public boolean exist(char[][] board, String word) {
         if (board==null || board[0].length == 0)
             return false;
@@ -46,7 +46,7 @@ public class WordSearch79 {
     }
 
     public static void main(String[] args) {
-        WordSearch79 wordSearch79 = new WordSearch79();
+        T79_WordSearch t79WordSearch = new T79_WordSearch();
         char[][] board = {
                 {'A','B','C','E'},
                 {'S','F','C','S'},
@@ -54,6 +54,6 @@ public class WordSearch79 {
 //        String word = "ABCESEEEFS";
         String word = "SEE";
 
-        System.out.println(wordSearch79.exist(board, word));
+        System.out.println(t79WordSearch.exist(board, word));
     }
 }

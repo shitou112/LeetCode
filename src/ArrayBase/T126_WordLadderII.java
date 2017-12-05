@@ -6,7 +6,7 @@ import java.util.*;
  * @author Qian Shaofeng
  *         created on 2017/11/28.
  */
-public class WordLadderII_126 {
+public class T126_WordLadderII {
 
     HashMap<String, Integer> path = new HashMap<>();
     ArrayList<String> results = new ArrayList<>();
@@ -77,7 +77,7 @@ public class WordLadderII_126 {
     }
 
     public static void main(String[] args) {
-        WordLadderII_126 wordLadderII_126 = new WordLadderII_126();
+        T126_WordLadderII t_126WordLadderII = new T126_WordLadderII();
         String begin = "qa";
         String end = "sw";
 
@@ -86,6 +86,6 @@ public class WordLadderII_126 {
         List<String> list = new ArrayList<>();
         for (String ele: wordList)
             list.add(ele);
-        List<List<String>> result = wordLadderII_126.findLadders(begin, end, list);
+        List<List<String>> result = t_126WordLadderII.findLadders(begin, end, list);
     }
 }

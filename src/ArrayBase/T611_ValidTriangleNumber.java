@@ -6,7 +6,7 @@ import java.util.Arrays;
  * @author Qian Shaofeng
  *         created on 2017/11/29.
  */
-public class ValidTriangleNumber_611 {
+public class T611_ValidTriangleNumber {
     public int triangleNumber(int[] nums) {
         int counts = 0;
         Arrays.sort(nums);
@@ -27,7 +27,7 @@ public class ValidTriangleNumber_611 {
     }
 
     public static void main(String[] args) {
-        ValidTriangleNumber_611 vtn = new ValidTriangleNumber_611();
+        T611_ValidTriangleNumber vtn = new T611_ValidTriangleNumber();
         int[] nums = {2, 2, 3, 4, 1, 7, 8};
         System.out.println(vtn.triangleNumber(nums));
     }

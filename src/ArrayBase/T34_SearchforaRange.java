@@ -4,7 +4,7 @@ package ArrayBase;
  * @author Qian Shaofeng
  *         created on 2017/11/30.
  */
-public class SearchforaRange_34 {
+public class T34_SearchforaRange {
     int startIndex=-1, endIndex=-1;
     public int[] searchRange(int[] nums, int target) {
         if (nums.length != 0)
@@ -45,7 +45,7 @@ public class SearchforaRange_34 {
     }
 
     public static void main(String[] args) {
-        SearchforaRange_34 sr = new SearchforaRange_34();
+        T34_SearchforaRange sr = new T34_SearchforaRange();
         int[] nums = {};
         int[] result = sr.searchRange(nums, 8);
         System.out.println(result);

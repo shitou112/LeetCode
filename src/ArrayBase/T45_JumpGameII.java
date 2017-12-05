@@ -4,7 +4,7 @@ package ArrayBase;
  * @author Qian Shaofeng
  *         created on 2017/12/3.
  */
-public class JumpGameII_45 {
+public class T45_JumpGameII {
     int depth = Integer.MAX_VALUE;
 
     /**
@@ -79,7 +79,7 @@ public class JumpGameII_45 {
         return depths;
     }
     public static void main(String[] args) {
-        JumpGameII_45 jg = new JumpGameII_45();
+        T45_JumpGameII jg = new T45_JumpGameII();
         int[] nums = {1,1};
         System.out.println(jg.jump2(nums));
     }

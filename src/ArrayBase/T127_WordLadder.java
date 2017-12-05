@@ -6,7 +6,7 @@ import java.util.*;
  * @author Qian Shaofeng
  *         created on 2017/11/28.
  */
-public class WordLadder_127 {
+public class T127_WordLadder {
     HashMap<String, Integer> path = new HashMap<>();
     public int ladderLength(String start, String end, List<String> dict) {
         HashSet<String> wordSet = new HashSet<>(dict);
@@ -44,7 +44,7 @@ public class WordLadder_127 {
     }
 
     public static void main(String[] args) {
-        WordLadder_127 wordLadderII_126 = new WordLadder_127();
+        T127_WordLadder wordLadderII_126 = new T127_WordLadder();
         String begin = "hit";
         String end = "cow";
 

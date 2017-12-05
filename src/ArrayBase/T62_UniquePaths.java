@@ -4,7 +4,7 @@ package ArrayBase;
  * @author Qian Shaofeng
  *         created on 2017/12/5.
  */
-public class UniquePaths_62 {
+public class T62_UniquePaths {
     int pathCounts = 0;
     public int uniquePaths(int m, int n) {
         if (m==0||n==0)
@@ -51,7 +51,7 @@ public class UniquePaths_62 {
     }
 
     public static void main(String[] args) {
-        UniquePaths_62 up = new UniquePaths_62();
+        T62_UniquePaths up = new T62_UniquePaths();
         System.out.println(up.uniquePaths(2, 3));
     }
 }
