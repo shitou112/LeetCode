@@ -17,6 +17,7 @@ public class T34_SearchforaRange {
 
     private void binSearch(int[] nums, int start, int end, int target){
         if (start >= end){
+            System.out.println(start);
             if (nums[start] == target)
                 updateRange(start);
             return;
@@ -46,8 +47,10 @@ public class T34_SearchforaRange {
 
     public static void main(String[] args) {
         T34_SearchforaRange sr = new T34_SearchforaRange();
-        int[] nums = {};
+        int[] nums = {1, 2, 3};
         int[] result = sr.searchRange(nums, 8);
-        System.out.println(result);
+//        System.out.println(result);
+        sr.binSearch(nums, 0, nums.length-1, 4);
+        System.out.println();
     }
 }

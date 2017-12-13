@@ -22,6 +22,8 @@ public class T105_ConstructBinaryTreefromPreorderandInorderTraversal {
         int value = preorder[preStart];
         root.val = value;
 
+        if (preStart==preEnd)
+            return root;
         int inRootIndex = inStart;
         for (int i=inStart; i <= inEnd; ++i){
             if (inorder[i] == value) {
@@ -43,7 +45,7 @@ public class T105_ConstructBinaryTreefromPreorderandInorderTraversal {
 
     public static void main(String[] args) {
         T105_ConstructBinaryTreefromPreorderandInorderTraversal cbtpit = new T105_ConstructBinaryTreefromPreorderandInorderTraversal();
-        int[] preorder = {1, 2, 3, 4, 5};
+        int[] preorder = {1, 2, 4, 3, 5};
         int[] inorder = {4, 2 , 1, 5, 3};
         TreeNode root = cbtpit.buildTree(preorder, inorder);
         System.out.println();
