@@ -22,9 +22,10 @@ public class T123_BestTimetoBuyandSellStockIII {
         return release2;
     }
 
+
     public static void main(String[] args) {
         T123_BestTimetoBuyandSellStockIII btbss = new T123_BestTimetoBuyandSellStockIII();
-        int[] nums = { 3,    1,    2,    8 ,   3 ,   4 ,   9  ,  6, 1, 100};
+        int[] nums = {3, 1, 2, 8, 3, 4, 9, 6, 1, 100};
         System.out.println(btbss.maxProfit(nums));
     }
 }
