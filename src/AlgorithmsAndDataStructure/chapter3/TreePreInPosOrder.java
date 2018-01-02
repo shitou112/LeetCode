@@ -10,7 +10,63 @@ import java.util.Stack;
  */
 public class TreePreInPosOrder {
 
+    public void preOrder(TreeNode root){
+        if (root==null)
+            return;
+
+        Stack<TreeNode> stack = new Stack<>();
+        stack.push(root);
+
+        TreeNode head;
+        while (!stack.isEmpty()){
+            head = stack.peek();
+            System.out.println(head.value);
+            if (head.right!=null)
+                stack.push(head.right);
+            if (head.left!=null)
+                stack.push(head.left);
+        }
+    }
+
+    public void inOrder(TreeNode root){
+        if (root==null)
+            return;
+
+        Stack<TreeNode> stack = new Stack<>();
+        TreeNode head = root;
+        while (!stack.isEmpty() || head!=null){
+            if (head!=null){
+                stack.push(head);
+                head = head.left;
+            }else {
+                head = stack.pop();
+                System.out.println(head.value);
+                head = head.right;
+            }
+        }
+    }
+
     public void posOrder(TreeNode root){
+        if (root==null)
+            return;
+
+        Stack<TreeNode> stack = new Stack<>();
+        stack.push(root);
+        TreeNode cur = null;
+        while (!stack.isEmpty()){
+            cur = stack.peek();
+            if (cur.left != null && root!=cur.left && root!=cur.right){
+                stack.push(cur.left);
+            }else if (cur.right != null && root!=cur.right){
+                stack.push(cur.right);
+            }else {
+                System.out.println(stack.pop().value);
+                root = cur;
+            }
+        }
+    }
+
+    public void posOrder2(TreeNode root){
         if (root==null)
             return;
 
