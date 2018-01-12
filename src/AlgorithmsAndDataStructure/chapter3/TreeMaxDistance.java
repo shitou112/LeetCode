@@ -12,16 +12,16 @@ public class TreeMaxDistance {
             return 0;
 
         int[] children = new int[2];
-        posOrder(root, 0, children);
+        posOrder(root, children);
         return children[0] + 1 + children[1];
     }
 
-    private int posOrder(TreeNode head, int depth, int[] children){
+    private int posOrder(TreeNode head, int[] children){
         if (head==null)
             return 0;
 
-        int left = posOrder(head.left, depth, children);
-        int rihgt = posOrder(head.right, depth, children);
+        int left = posOrder(head.left, children);
+        int rihgt = posOrder(head.right, children);
 
         children[0] = left;
         children[1] = rihgt;
