@@ -53,8 +53,12 @@ public class Palindromic {
         return dp;
     }
 
+
+
     public static void main(String[] args) {
         Palindromic p = new Palindromic();
-        System.out.println(p.minPalindromic("ABACB"));
+        String str = "ABACB";
+        System.out.println(p.minPalindromic(str));
+//        System.out.println(p.getDp2(str.toCharArray()));
     }
 }
