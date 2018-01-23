@@ -32,7 +32,9 @@ public class T380_InsertDeleteGetRandom {
     public boolean remove(int val) {
         int loc;
         if ((loc = hashMap.getOrDefault(val, -1))!=-1) {
-            list.set(loc, list.get(list.size()-1));
+            int value = list.get(list.size()-1);
+            list.set(loc, value);
+            hashMap.put(value, loc);
             list.remove(list.size()-1);
             hashMap.remove(val);
 
