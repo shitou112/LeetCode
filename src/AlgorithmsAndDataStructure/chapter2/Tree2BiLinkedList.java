@@ -106,5 +106,6 @@ public class Tree2BiLinkedList {
         TreeNode head = tree2BiLinkedList.generateBiLinkedList2(r1);
         System.out.println(head);
 
+
     }
 }
