@@ -1,6 +1,6 @@
-package sword2offer.problem;
+package sword2offer.niuke.problem;
 
-import sword2offer.utils.TreeNode;
+import sword2offer.niuke.utils.TreeNode;
 
 /**
  * @author Qian Shaofeng

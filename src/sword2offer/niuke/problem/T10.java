@@ -1,30 +1,31 @@
-package sword2offer.problem;
+package sword2offer.niuke.problem;
 
 /**
  * @author Qian Shaofeng
- * created on 2018/1/27.
+ * created on 2018/1/29.
  */
-public class T7 {
-    public int Fibonacci(int n) {
-        if (n==0)
+public class T10 {
+    public int RectCover(int target) {
+        if (target==0)
             return 0;
-        if (n==1 || n==2)
+        else if (target==1)
             return 1;
 
         int prepre = 1;
         int pre = 1;
         int res = 0;
-        for (int i=3; i <= n; ++i){
+        for (int i=2; i <= target; ++i){
             res = prepre + pre;
             prepre = pre;
             pre = res;
         }
 
         return res;
+
     }
 
     public static void main(String[] args) {
-        T7 t7 = new T7();
-        System.out.println(t7.Fibonacci(9));
+        T10 t10 = new T10();
+        System.out.println(t10.RectCover(3));
     }
 }

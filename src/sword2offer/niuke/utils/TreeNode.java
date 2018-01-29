@@ -1,4 +1,4 @@
-package sword2offer.utils;
+package sword2offer.niuke.utils;
 
 /**
  * @author Qian Shaofeng

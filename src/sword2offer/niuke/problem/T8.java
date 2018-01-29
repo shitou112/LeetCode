@@ -1,4 +1,4 @@
-package sword2offer.problem;
+package sword2offer.niuke.problem;
 
 /**
  * @author Qian Shaofeng
