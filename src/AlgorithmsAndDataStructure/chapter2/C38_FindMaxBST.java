@@ -2,6 +2,9 @@ package AlgorithmsAndDataStructure.chapter2;
 
 import AlgorithmsAndDataStructure.utils.TreeNode;
 
+import java.util.Arrays;
+import java.util.Comparator;
+
 /**
  * @author Qian Shaofeng
  * created on 2018/3/3.
@@ -35,6 +38,7 @@ public class C38_FindMaxBST {
         int rNodesNum = records[0];
         int rmin = records[1];
         int rmax = records[2];
+
 
         records[1] = Math.min(lmin, head.value);
         records[2] = Math.max(rmax, head.value);
