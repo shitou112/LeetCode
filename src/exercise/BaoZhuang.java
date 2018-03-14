@@ -94,6 +94,7 @@ public class BaoZhuang {
 
             }
             recursive(order, boms, index, keys);
+
             for (int j=0; j < order.size(); ++j){
                 order.set(j, order.get(j)+values.get(j));
 
@@ -101,5 +102,6 @@ public class BaoZhuang {
 
             maps.put(bomName, maps.get(bomName)-1);
         }
+
     }
 }
